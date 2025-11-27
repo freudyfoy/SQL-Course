@@ -54,3 +54,37 @@ select
 from customers
 cross join orders;
 
+
+
+-- Task Advanced join
+-- :Retrieve and join all information by displaying
+-- Order ID, Customer's name, Product name, Sales, Price, Sales person's name
+
+select
+	o.OrderID,
+	c.FirstName as Customer_Firstname,
+	c.LastName as Customer_LastName,
+	p.Product as Product_name,
+	p.Category as Product_category,
+	o.Sales,
+	p.Price as Price,
+	e.FirstName as SalesPerson_name
+from Sales.Orders as o
+left join Sales.Customers as c
+on o.CustomerID = c.CustomerID
+left join Sales.Products as p
+on o.ProductID = p.ProductID
+left join Sales.Employees as e
+on o.SalesPersonID = e.EmployeeID;
+
+
+/*select *
+from Sales.Orders;
+select *
+from Sales.Customers;
+select *
+from Sales.Products;
+select *
+from Sales.Employees;*/
+
+
