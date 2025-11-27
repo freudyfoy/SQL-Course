@@ -1,1 +1,1 @@
-SQL command notes
+SQL command notes from Zero to Hero
